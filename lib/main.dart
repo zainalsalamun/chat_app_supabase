@@ -1,15 +1,10 @@
 import 'package:chat_app_supabase/page/splah_screen.dart';
+import 'package:chat_app_supabase/shared/api_url.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await Supabase.initialize(
-    url: 'https://ngvyhsscqcllicylplef.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ndnloc3NjcWNsbGljeWxwbGVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3ODU4MjYsImV4cCI6MjAyNTM2MTgyNn0.rh19sDISTPKdRcEToO96_ar_BzEjN7D7BkuT4KQ6jH0',
-  );
+  apiUrl();
   runApp(const MyApp());
 }
 
