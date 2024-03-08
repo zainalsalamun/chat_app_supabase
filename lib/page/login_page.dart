@@ -1,4 +1,4 @@
-import 'package:chat_app_supabase/shared/constant.dart';
+import 'package:chat_app_supabase/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

@@ -6,7 +6,7 @@ import 'package:timeago/timeago.dart';
 
 import '../models/message.dart';
 import '../models/profile.dart';
-import '../shared/constant.dart';
+import '../shared/theme.dart';
 
 /// Page to chat with someone.
 ///

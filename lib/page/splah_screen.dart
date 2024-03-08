@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../shared/constant.dart';
+import '../shared/theme.dart';
 import 'chat_page.dart';
 import 'regisger_page.dart';
 
