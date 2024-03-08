@@ -20,9 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'My Chat App',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+          fontFamily: 'Poppins',
+          textTheme: ThemeData().textTheme.apply(),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: SplashPage());
   }
