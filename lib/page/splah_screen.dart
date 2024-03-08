@@ -1,41 +1,40 @@
 import 'package:flutter/material.dart';
 
 import '../shared/constant.dart';
+import 'chat_page.dart';
+import 'regisger_page.dart';
 
+/// Page to redirect users to the appropriate page depending on the initial auth state
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  SplashPageState createState() => SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class SplashPageState extends State<SplashPage> {
   @override
-  void iniState() {
+  void initState() {
     super.initState();
     _redirect();
   }
 
   Future<void> _redirect() async {
+    // await for for the widget to mount
     await Future.delayed(Duration.zero);
 
     final session = supabase.auth.currentSession;
     if (session == null) {
-      Navigator.of(context).pushReplacementNamed('/login');
+      Navigator.of(context)
+          .pushAndRemoveUntil(RegisterPage.route(), (route) => false);
     } else {
-      Navigator.of(context).pushReplacementNamed('/home');
+      Navigator.of(context)
+          .pushAndRemoveUntil(ChatPage.route(), (route) => false);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'My Chat App',
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
-      ),
-    );
+    return const Scaffold(body: preloader);
   }
 }
